@@ -42,11 +42,31 @@ then disable securities certificate by using<br/>
 * In cpuid.c, created 2 new cpuid leaf in kvm_emulate_cpuid function which reads the
   total_no_of_exits into % eax when eax = 0x4ffffffc and moves the high 32 bits of total_cycles_in_exits into %ebx and low 32 bits
   of total_cycles_in_exits into %ecx when % eax = 0x4ffffffd
-* compile the code using <br/>
+* Compile the code using <br/>
   `make -j $nproc modules`
-* to install the built modules run <br/>
+* To install the built modules run <br/>
   `sudo make INSTALL_MOD_STRIP=1 modules_install && make install`
 * Run the below commands to reload the KVM module <br/>
 `sudo rmmod kvm_intel ` <br/>
 `sudo rmmod kvm` <br/>
 `sudo modprobe kvm_intel` <br/>
+
+### Inner VM Setup
+* Before installing the KVM first check whether CPU virtualization feature is enabled in the system BIOS or not by running the below command <br/>
+`egrep -c '(vmx|svm)' /proc/cpuinfo`
+* Install the QEMU/KVM and Libvirt using the below command <br/>
+`sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon`
+* Start and enable KVM service <br/>
+`sudo systemctl enable --now libvirtd`
+* Install Virt-Manager GUI for KVM using the below command <br/>
+`sudo apt install virt-manager -y`
+* Download the ubuntu iso image
+* Run the KVM Virt-Manager and create a VM
+* Complete the installation process and configure the inner VM
+* Build the test code inside the inner VM to test the changes made in the Outer VM kvm module.
+
+### Output
+The screenshot below shows the total number of exits and the total time spent processing all exits
+
+![Screenshot from 2022-12-01 01-16-44](https://user-images.githubusercontent.com/111547793/205148877-1d8fd36c-6777-41aa-97a1-01b85e068fae.png)
+
