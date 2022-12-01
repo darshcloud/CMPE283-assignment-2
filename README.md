@@ -13,7 +13,7 @@ when special CPUID leaf nodes are requested.
 ### Submitted By: Darshini Venkatesha Murthy Nag <br/>
 ### Student ID: 016668951 <br/>
 ### Linux kernel Source code Working tree: 
-Please refer https://github.com/darshcloud/linux.git
+Please refer https://github.com/darshcloud/linux.git for the working tree
 
 ## Steps used to complete the assignment
 ### Steps to build kernel:
@@ -33,3 +33,20 @@ then disable securities certificate by using<br/>
 `sudo make install`
 * Reboot and verify the kernel version by running the command<br/>
 `uname -mrs`
+
+### Code Modification in Kernel source code
+* Added assignment functionality for building the leaf functions 0x4ffffffc and 0x4ffffffd
+* Added 2 Global variables total_cycles_in_exits and total_no_of_exits
+* In vmx.c, Implemented the changes for calculating the number of exits
+  and total time spent processing all exits in the vmx_handle_exit function
+* In cpuid.c, created 2 new cpuid leaf in kvm_emulate_cpuid function which reads the
+  total_no_of_exits into % eax when eax = 0x4ffffffc and moves the high 32 bits of total_cycles_in_exits into %ebx and low 32 bits
+  of total_cycles_in_exits into %ecx when % eax = 0x4ffffffd
+* compile the code using <br/>
+  `make -j $nproc modules`
+* to install the built modules run <br/>
+  `sudo make INSTALL_MOD_STRIP=1 modules_install && make install`
+* Run the below commands to reload the KVM module <br/>
+`sudo rmmod kvm_intel ` <br/>
+`sudo rmmod kvm` <br/>
+`sudo modprobe kvm_intel` <br/>
