@@ -13,11 +13,11 @@ when special CPUID leaf nodes are requested.
 ### Submitted By: Darshini Venkatesha Murthy Nag <br/>
 ### Student ID: 016668951 <br/>
 ### Linux kernel Source code Working tree: 
-Please refer <> which i forked to complete the assignment 
+Please refer https://github.com/darshcloud/linux.git
 
 ## Steps used to complete the assignment
 ### Steps to build kernel:
-* Fork the linux kernel source repository <> and clone it
+* Fork the linux kernel source repository https://github.com/torvalds/linux.git and clone it
 * Install the dependencies using the below command <br/>
 `sudo apt-get install fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison`
 * Copy the existing configuration using the command<br/>
