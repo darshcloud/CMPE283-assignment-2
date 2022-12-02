@@ -12,8 +12,7 @@ when special CPUID leaf nodes are requested.
 ### Professor's Name: Michael Larkin <br/>
 ### Submitted By: Darshini Venkatesha Murthy Nag <br/>
 ### Student ID: 016668951 <br/>
-### Linux kernel Source code Working tree: 
-Please refer https://github.com/darshcloud/linux.git for the working tree
+### Linux kernel Source code Working tree: Please refer https://github.com/darshcloud/linux.git for the working tree
 
 ## Steps used to complete the assignment
 ### Steps to build kernel:
