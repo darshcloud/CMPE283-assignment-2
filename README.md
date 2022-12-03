@@ -5,7 +5,7 @@ when special CPUID leaf nodes are requested.
 * For CPUID leaf node %eax=0x4FFFFFFC:<br/>
   Return the total number of exits (all types) in %eax
 * For CPUID leaf node %eax=0x4FFFFFFD:<br/>
-  Return the high 32 bits of the total time spent processing all exits in %ebx
+  Return the high 32 bits of the total time spent processing all exits in %ebx<br/>
   Return the low 32 bits of the total time spent processing all exits in %ecx
   %ebx and %ecx return values are measured in processor cycles, across all VCPUs
 
@@ -21,7 +21,7 @@ when special CPUID leaf nodes are requested.
 `sudo apt-get install fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison`
 * Copy the existing configuration using the command<br/>
 `cp -v /boot/config-$(uname -r) .config`
-* run the below command to compile and build the kernel<br/>
+* Run the below command to compile and build the kernel<br/>
 `make -j $nproc` <br/>
 if you encounter error "No rule to make target 'debian/canonical-certs.pem"
 then disable securities certificate by using<br/>
@@ -30,7 +30,7 @@ then disable securities certificate by using<br/>
 `sudo make INSTALL_MOD_STRIP=1 modules_install`
 * Run the below command to install the kernel<br/>
 `sudo make install`
-* Reboot and verify the kernel version by running the command<br/>
+* Reboot and verify the kernel version by running the below command<br/>
 `uname -mrs`
 
 ### Code Modification in Kernel source code
