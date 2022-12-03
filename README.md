@@ -65,7 +65,13 @@ then disable securities certificate by using<br/>
 * Build the test code inside the inner VM to test the changes made in the Outer VM kvm module.
 
 ### Output
-The screenshot below shows the total number of exits and the total time spent processing all exits
+The screenshot below shows the total number of exits and the total time spent processing all exits from my test program
 
-![Screenshot from 2022-12-01 01-16-44](https://user-images.githubusercontent.com/111547793/205148877-1d8fd36c-6777-41aa-97a1-01b85e068fae.png)
+![Screenshot from 2022-12-03 01-04-16](https://user-images.githubusercontent.com/111547793/205433483-c407a8c8-76d3-472d-9447-95938b584e6b.png)
+
+Output using CPUID package
+
+![Screenshot from 2022-12-03 01-05-28](https://user-images.githubusercontent.com/111547793/205433497-c7a293fb-ebe6-4fba-96ca-664da9090480.png)
+
+
 
