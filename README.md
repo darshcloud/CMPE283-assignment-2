@@ -12,7 +12,7 @@ when special CPUID leaf nodes are requested.
 ### Professor's Name: Michael Larkin <br/>
 ### Submitted By: Darshini Venkatesha Murthy Nag <br/>
 ### Student ID: 016668951 <br/>
-### Linux kernel Source code Working tree for Assignment: <br/> Please refer https://github.com/darshcloud/linux.git for the complete working tree which i forked from the master linux kernel repo to complete the assignment
+### Linux kernel Source code Working tree for Assignment: <br/> Please refer https://github.com/darshcloud/linux.git for the complete working tree which i forked from the master linux kernel repo and built the kernel to complete the assignment
 
 ## Steps used to complete the assignment
 ### Steps to build kernel:
