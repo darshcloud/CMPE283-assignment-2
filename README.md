@@ -67,11 +67,13 @@ then disable securities certificate by using<br/>
 ### Output
 The screenshot below shows the total number of exits and the total time spent processing all exits from my test program
 
-![Screenshot from 2022-12-03 01-04-16](https://user-images.githubusercontent.com/111547793/205433483-c407a8c8-76d3-472d-9447-95938b584e6b.png)
+![Screenshot from 2022-12-03 18-03-55](https://user-images.githubusercontent.com/111547793/205470685-c9a2d949-92a2-4544-91fc-37b500cb6be4.png)
+
 
 Output using CPUID package
 
-![Screenshot from 2022-12-03 01-05-28](https://user-images.githubusercontent.com/111547793/205433497-c7a293fb-ebe6-4fba-96ca-664da9090480.png)
+![Screenshot from 2022-12-03 18-04-48](https://user-images.githubusercontent.com/111547793/205470689-13a1a5f4-6b51-4f96-9ab0-adf04f4d5c5f.png)
+
 
 
 
