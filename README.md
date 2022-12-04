@@ -50,7 +50,7 @@ then disable securities certificate by using<br/>
 `sudo rmmod kvm` <br/>
 `sudo modprobe kvm_intel` <br/>
 
-### Inner VM Setup
+### Nested VM Setup
 * Before installing the KVM first check whether CPU virtualization feature is enabled in the system BIOS or not by running the below command <br/>
 `egrep -c '(vmx|svm)' /proc/cpuinfo`
 * Install the QEMU/KVM and Libvirt using the below command <br/>
