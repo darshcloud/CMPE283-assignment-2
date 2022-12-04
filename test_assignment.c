@@ -1,26 +1,36 @@
 #include <stdint.h>
 #include <stdio.h>
 
+static inline void native_cpuid(unsigned int *eax, unsigned int *ebx,
+                                unsigned int *ecx, unsigned int *edx)
+{
+        /* ecx is often an input as well as an output. */
+        asm volatile("cpuid"
+            : "=a" (*eax),
+              "=b" (*ebx),
+              "=c" (*ecx),
+              "=d" (*edx)
+            : "0" (*eax), "2" (*ecx));
+}
+
 int main()
 {
-	uint32_t total_no_exits;
-	uint32_t total_time_low;
-	uint32_t total_time_high;
-	uint64_t total_time;
-
-	__asm__("mov $0x4ffffffc, %eax\n\t");
-	__asm__("cpuid\n\t");
-	__asm__("mov %%eax, %0;" : "=r" (total_no_exits));
-	printf("CPUID 0x4ffffffc, Total number of exits = %d\n", total_no_exits);
+	uint64_t exit_time;
+	uint32_t eax, ebx, ecx, edx;
+	int i;
 	
-	__asm__("mov $0x4ffffffd, %eax\n\t");
-	__asm__("cpuid\n\t");
-	__asm__("mov %%ebx, %0;" : "=r" (total_time_high));
-	__asm__("mov %%ecx, %0;" : "=r" (total_time_low));
-	total_time = total_time_high;
-	total_time = total_time << 32;
-	total_time |= total_time_low;
-	printf("CPUID 0x4ffffffd, Total time spent processing all exits = %ld\n", total_time); 
-	
+	eax = 0x4ffffffc;
+	ecx = i;
+	ebx = edx = 0;
+	native_cpuid(&eax, &ebx, &ecx, &edx);
+	printf("CPUID 0x4ffffffc, Total no of exits = %d\n", eax);
+	eax = 0x4ffffffd;
+	ecx = i;
+	ebx = edx = 0;
+	native_cpuid(&eax, &ebx, &ecx, &edx);
+	exit_time = ebx;
+	exit_time = exit_time << 32;
+	exit_time |= ecx;
+	printf("CPUID 0x4ffffffd, Total time spent processing all exits = %ld\n", exit_time);
 	return 0;
 }
